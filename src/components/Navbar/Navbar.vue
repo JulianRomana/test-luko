@@ -13,6 +13,8 @@ export default {
 
 <style lang="scss" module>
 .wrapper {
+  position: fixed;
+  top: 0;
   width: 100%;
   padding: 2.4rem 8rem;
 }

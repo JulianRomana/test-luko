@@ -3,7 +3,7 @@
     <body>
       <Navbar />
       <main :class="$style.main">
-        <SideMenu />
+        <SideMenu v-if="this.$mq === 'lg'" />
         <Referral />
       </main>
     </body>
@@ -27,6 +27,15 @@ export default {
 
 <style lang="scss" module>
 .main {
-  display: flex;
+  display: grid;
+  grid-gap: 18rem;
+  grid-auto-flow: column;
+  justify-content: center;
+  padding: $navbar-height 8rem 0;
+
+  @media (min-width: 1250px) {
+    justify-content: unset;
+    padding: $navbar-height 18rem 0;
+  }
 }
 </style>

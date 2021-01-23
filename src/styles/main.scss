@@ -7,3 +7,22 @@ html {
 	font-weight: 400;
 	background-color: #f4f3ef;
 }
+
+h1,
+h2,
+h3,
+h4 {
+	color: $gray-darker;
+}
+
+h2 {
+	font-size: 3.4rem;
+}
+
+h3 {
+	font-size: 2.8rem;
+}
+
+h4 {
+	font-size: 2rem;
+}

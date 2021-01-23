@@ -4,7 +4,12 @@
     :disabled="disabled"
     @click="$emit('click')" 
   >
-    <img :src="getIcon" :class="$style.icon" alt="">
+    <img 
+      v-if="icon" 
+      :src="getIcon" 
+      :class="$style.icon" 
+      alt=""
+    >
     <slot />
   </button>
 </template>
@@ -43,6 +48,7 @@ export default {
   font-size: 1.6rem;
   color: $white;
   border-radius: 8px;
+  font-family: inherit;
 }
 
 .icon {

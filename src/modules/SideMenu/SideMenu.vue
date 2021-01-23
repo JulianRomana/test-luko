@@ -1,13 +1,17 @@
 <template>
   <div :class="$style.wrapper">
-    <span :class="$style.item">
-      <img src="@/assets/icons/house.svg" alt="house icon"> 
-      <span>Welcome</span>
-    </span>
-    <span :class="[$style.item, $style.insurance]">
-      <img src="@/assets/icons/gift.svg" alt="gift icon"> 
-      <span :class="$style.insuranceText">Get free insurance</span>
-    </span>
+    <SideMenuItem 
+      icon="home"
+      :is-active="$route.name === 'home'"
+    >
+      Welcome
+    </SideMenuItem>
+    <SideMenuItem 
+      icon="gift"
+      :is-active="$route.name === 'insurance'"
+    >
+      Get free insurance
+    </SideMenuItem>
     <Button 
       icon="add-document" 
       background="terracota"
@@ -30,12 +34,6 @@ export default {
 <style lang="scss" module>
 .wrapper {
 
-}
-
-.item { 
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 1.6rem;
 }
 
 .insurance {

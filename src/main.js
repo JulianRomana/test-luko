@@ -3,6 +3,8 @@ import App from "./App.vue"
 import store from "./store"
 import "@/styles/index.scss"
 
+import '@/plugins/media-queries'
+
 Vue.config.productionTip = false
 
 new Vue({
