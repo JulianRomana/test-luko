@@ -1,6 +1,8 @@
 <template>
   <div :class="$style.wrapper">
-    <img src="@/assets/luko-logo.svg" alt="luko logo">
+    <router-link to="/">
+      <img src="@/assets/luko-logo.svg" alt="luko logo">
+    </router-link>
   </div>
 </template>
 

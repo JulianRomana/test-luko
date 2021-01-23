@@ -4,10 +4,12 @@ import store from "./store"
 import "@/styles/index.scss"
 
 import '@/plugins/media-queries'
+import router from './router'
 
 Vue.config.productionTip = false
 
 new Vue({
   store,
+  router,
   render: h => h(App),
 }).$mount("#app")

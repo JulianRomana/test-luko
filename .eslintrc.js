@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
   extends: ["plugin:vue/essential", "eslint:recommended"],
   parserOptions: { parser: "babel-eslint" },
@@ -9,6 +9,6 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "comma-dangle": [1, 'always-multiline'],
-    "semi": ["error", "never"]
-  }
+    "semi": ["error", "never"],
+  },
 }

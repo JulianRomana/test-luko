@@ -1,18 +1,21 @@
 <template>
   <div :class="$style.wrapper">
     <SideMenuItem 
-      icon="home"
-      :is-active="$route.name === 'home'"
+      icon="house"
+      to="/"
+      :is-active="$route.name === 'landing'"
     >
       Welcome
     </SideMenuItem>
     <SideMenuItem 
       icon="gift"
+      to="/insurance"
       :is-active="$route.name === 'insurance'"
     >
       Get free insurance
     </SideMenuItem>
     <Button 
+    :class="$style.button"
       icon="add-document" 
       background="terracota"
     >
@@ -24,20 +27,23 @@
 <script>
 // @TODO, AVEC ROUTER ET INSURANCE SELECTED
 import { Button } from '@/components/Button'
+import SideMenuItem from './components/SideMenuItem'
 
 export default {
   name: 'SideMenu',
-  components: { Button },
+  components: { 
+    Button, 
+    SideMenuItem 
+  },
 }
 </script>
 
 <style lang="scss" module>
 .wrapper {
-
+  max-width: 25.6rem;
 }
 
-.insurance {
-  color: $blueko;
-  margin: 2.4rem 0 4rem;
+.button {
+  margin-top: 4rem;
 }
 </style>

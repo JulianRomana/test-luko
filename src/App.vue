@@ -4,24 +4,20 @@
       <Navbar />
       <main :class="$style.main">
         <SideMenu v-if="this.$mq === 'lg'" />
-        <Referral />
+        <router-view />
       </main>
     </body>
   </div>
 </template>
 
 <script>
-import { Referral } from '@/modules/Referral'
 import { Navbar } from '@/components/Navbar'
 import { SideMenu } from '@/modules/SideMenu'
 
+
 export default {
   name: 'App',
-  components: {
-    SideMenu,
-    Referral,
-    Navbar,
-  },
+  components: { Navbar, SideMenu },
 }
 </script>
 
