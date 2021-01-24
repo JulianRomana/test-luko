@@ -49,6 +49,8 @@ export default {
   color: $white;
   border-radius: 8px;
   font-family: inherit;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .icon {

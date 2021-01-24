@@ -14,7 +14,6 @@
 import { Navbar } from '@/components/Navbar'
 import { SideMenu } from '@/modules/SideMenu'
 
-
 export default {
   name: 'App',
   components: { Navbar, SideMenu },
@@ -27,7 +26,7 @@ export default {
   grid-gap: 18rem;
   grid-auto-flow: column;
   justify-content: center;
-  padding: $navbar-height 8rem 0;
+  padding: $navbar-height 2.4rem 0;
 
   @media (min-width: 1250px) {
     justify-content: unset;

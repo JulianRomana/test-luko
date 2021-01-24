@@ -18,6 +18,10 @@ export default {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 2.4rem 8rem;
+  padding: 2.4rem;
+
+  @media (min-width: 1250px) {
+    padding: 2.4rem 8rem;
+  }
 }
 </style>

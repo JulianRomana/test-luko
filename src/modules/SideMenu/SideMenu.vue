@@ -15,7 +15,7 @@
       Get free insurance
     </SideMenuItem>
     <Button 
-    :class="$style.button"
+      :class="$style.button"
       icon="add-document" 
       background="terracota"
     >
@@ -33,7 +33,7 @@ export default {
   name: 'SideMenu',
   components: { 
     Button, 
-    SideMenuItem 
+    SideMenuItem, 
   },
 }
 </script>

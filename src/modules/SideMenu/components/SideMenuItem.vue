@@ -7,7 +7,7 @@
     ]"
   >
     <img :class="$style.icon" :src="getIcon" alt="">
-    <span>
+    <span :class="$style.text">
       <slot/>
     </span>
   </router-link>
@@ -35,7 +35,7 @@ export default {
       return this.isActive 
         ? require(`../../../assets/icons/${this.icon}-blue.svg`)
         : require(`../../../assets/icons/${this.icon}.svg`)
-    }
+    },
   },
 }
 </script>
@@ -59,6 +59,10 @@ export default {
 
 .isActive {
   color: $blueko;
+}
+
+.text {
+  white-space: nowrap;
 }
 
 </style>
