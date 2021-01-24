@@ -1,6 +1,10 @@
 <template>
   <button 
-    :class="[$style.wrapper, background]"
+    :class="[
+      $style.button,
+      background,
+      disabled && $style.disabled
+    ]"
     :disabled="disabled"
     @click="$emit('click')" 
   >
@@ -41,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-.wrapper {
+.button {
   display: flex;
   align-items: center;
   padding: 1.2rem 2.4rem;
@@ -55,5 +59,11 @@ export default {
 
 .icon {
   margin-right: 2rem;
+}
+
+.button.disabled {
+  color: $gray-lighter;
+  background-color: $gray-lightest;
+  cursor: default;
 }
 </style>

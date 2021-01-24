@@ -26,36 +26,38 @@
         </div>
       </transition>
     </div>
-    <a
-      :class="$style.socialMediaIcon" 
-      target="_blank"
-      href="https://web.whatsapp.com/"
-    >
-      <img 
-        src="@/assets/icons/whatsapp.svg" 
-        alt="whatsapp icon"
-    >
-    </a>
-    <a
-      :class="$style.socialMediaIcon" 
-      target="_blank"
-      href="https://messenger.com/"
-    >
-      <img 
-        src="@/assets/icons/messenger.svg" 
-        alt="messenger icon"
+    <template v-if="$mq === 'md'">
+      <a
+        :class="$style.socialMediaIcon" 
+        target="_blank"
+        href="https://web.whatsapp.com/"
       >
-    </a>
-    <a
-      :class="$style.socialMediaIcon" 
-      target="_blank"
-      href="https://facebook.com/"
-    >
-      <img 
-        src="@/assets/icons/facebook.svg" 
-        alt="facebook icon"
+        <img 
+          src="@/assets/icons/whatsapp.svg" 
+          alt="whatsapp icon"
       >
-    </a>
+      </a>
+      <a
+        :class="$style.socialMediaIcon" 
+        target="_blank"
+        href="https://messenger.com/"
+      >
+        <img 
+          src="@/assets/icons/messenger.svg" 
+          alt="messenger icon"
+        >
+      </a>
+      <a
+        :class="$style.socialMediaIcon" 
+        target="_blank"
+        href="https://facebook.com/"
+      >
+        <img 
+          src="@/assets/icons/facebook.svg" 
+          alt="facebook icon"
+        >
+      </a>
+    </template>
   </div>
 </template>
 
@@ -96,8 +98,15 @@ export default {
 
 .wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .8rem;
   margin-top: 3.2rem;
+  
+  @media (min-width: 1250px) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .input {
