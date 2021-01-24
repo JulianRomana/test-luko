@@ -16,19 +16,21 @@ import { SideMenu } from '@/modules/SideMenu'
 
 export default {
   name: 'App',
-  components: { Navbar, SideMenu },
+  components: {
+    Navbar,
+    SideMenu,
+  },
 }
 </script>
 
 <style lang="scss" module>
 .main {
-  display: grid;
-  grid-gap: 18rem;
-  grid-auto-flow: column;
+  display: flex;
   justify-content: center;
   padding: $navbar-height 2.4rem 0;
 
   @media (min-width: 1250px) {
+    gap: 8rem;
     justify-content: unset;
     padding: $navbar-height 18rem 0;
   }

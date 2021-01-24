@@ -1,17 +1,17 @@
 <template>
-  <button 
+  <button
     :class="[
       $style.button,
       background,
       disabled && $style.disabled
     ]"
     :disabled="disabled"
-    @click="$emit('click')" 
+    @click="$emit('click')"
   >
-    <img 
-      v-if="icon" 
-      :src="getIcon" 
-      :class="$style.icon" 
+    <img
+      v-if="icon"
+      :src="getIcon"
+      :class="$style.icon"
       alt=""
     >
     <slot />
@@ -37,7 +37,6 @@ export default {
   },
   computed: {
     getIcon() {
-      // @TODO refactor
       return require(`../../assets/icons/${this.icon}.svg`)
     },
   },

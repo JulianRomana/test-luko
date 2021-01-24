@@ -1,8 +1,8 @@
 <template>
-  <router-link 
-    :to="to" 
+  <router-link
+    :to="to"
     :class="[
-      $style.item, 
+      $style.item,
       isActive && $style.isActive
     ]"
   >
@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     getIcon() {
-      return this.isActive 
+      return this.isActive
         ? require(`../../../assets/icons/${this.icon}-blue.svg`)
         : require(`../../../assets/icons/${this.icon}.svg`)
     },
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang='scss' module>
-.item { 
+.item {
   display: grid;
   grid-gap: 1.6rem;
   grid-template-columns: auto 1fr;

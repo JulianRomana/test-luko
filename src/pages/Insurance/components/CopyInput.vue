@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.wrapper">
-    <input 
+    <input
       v-model="link"
       :class="$style.input"
       ref="input"
@@ -8,14 +8,14 @@
       readonly
     >
     <div :class="$style.buttonWrapper">
-      <Button 
-        background="blue" 
+      <Button
+        background="blue"
         @click="copyLink"
       >
         Copy invite link
       </Button>
       <transition name="fade-in">
-        <div 
+        <div
           v-if="notification.showNotification"
           :class="[
             $style.notification,
@@ -26,34 +26,34 @@
         </div>
       </transition>
     </div>
-    <template v-if="$mq === 'md'">
+    <template v-if="$mq === 'lg'">
       <a
-        :class="$style.socialMediaIcon" 
+        :class="$style.socialMediaIcon"
         target="_blank"
         href="https://web.whatsapp.com/"
       >
-        <img 
-          src="@/assets/icons/whatsapp.svg" 
+        <img
+          src="@/assets/icons/whatsapp.svg"
           alt="whatsapp icon"
       >
       </a>
       <a
-        :class="$style.socialMediaIcon" 
+        :class="$style.socialMediaIcon"
         target="_blank"
         href="https://messenger.com/"
       >
-        <img 
-          src="@/assets/icons/messenger.svg" 
+        <img
+          src="@/assets/icons/messenger.svg"
           alt="messenger icon"
         >
       </a>
       <a
-        :class="$style.socialMediaIcon" 
+        :class="$style.socialMediaIcon"
         target="_blank"
         href="https://facebook.com/"
       >
-        <img 
-          src="@/assets/icons/facebook.svg" 
+        <img
+          src="@/assets/icons/facebook.svg"
           alt="facebook icon"
         >
       </a>
@@ -67,7 +67,7 @@ import { Button } from '@/components/Button'
 export default {
   name: 'CopyInput',
   components: { Button },
-  data: () => ({ 
+  data: () => ({
     link: 'https://luko.eu/join/luko@email.com',
     notification: {
       showNotification: false,
@@ -81,11 +81,11 @@ export default {
         await navigator.clipboard.writeText(this.link)
 
         this.notification.showNotification = true
-        this.notification.content = 'Copied to clipboard !'
+        this.notification.content = 'Copied to clipboard!'
       } catch (e) {
+        this.notification.error = true
         this.notification.showNotification = true
         this.notification.content = 'Failed to copy to clipboard'
-        this.error = true
       } finally {
         setTimeout(() => { this.notification.showNotification = false }, 2000)
       }
@@ -112,6 +112,7 @@ export default {
 .input {
   max-width: 405px;
   width: 100%;
+  margin-right: .8rem;
   padding: 1.2rem 1.6rem;
   color: $blueko;
   font-size: 1.6rem;
@@ -122,7 +123,6 @@ export default {
 
 .buttonWrapper {
   position: relative;
-  margin-left: .8rem;
 }
 
 .notification {
